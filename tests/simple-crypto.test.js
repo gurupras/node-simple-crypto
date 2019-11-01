@@ -71,6 +71,14 @@ describe('SimpleCrypto', () => {
     await expect(simpleCrypto.encrypt('test')).rejects.toEqual(err)
   })
 
+  test('Encrypted text from one instance can be deciphered from another', async () => {
+    const sc2 = new SimpleCrypto(config)
+
+    const encrypted = await simpleCrypto.encrypt(text)
+    const decrypted = await sc2.decrypt(encrypted)
+    expect(decrypted).toEqual(text)
+  })
+
   describe('Short passphrase tests', () => {
     test('Works fine if a short key is provided', async () => {
       const cfg = { ...config, passphrase: 'test' }
