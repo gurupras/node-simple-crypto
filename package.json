@@ -4,7 +4,8 @@
   "description": "Simple library to perform encryption and decryption",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "debug:test": "node --inspect-brk node_modules/.bin/jest --coverage=false"
   },
   "repository": {
     "type": "git",

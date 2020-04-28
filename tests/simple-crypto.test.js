@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-const SimpleCrypto = require('../lib')
+const SimpleCrypto = require('../index')
 
 const config = {
   algorithm: 'aes-256-cbc',
